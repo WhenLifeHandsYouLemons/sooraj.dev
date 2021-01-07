@@ -1,17 +1,36 @@
 from flask import Flask
 from flask import send_file
+from flask import request
+import socket
+
+local_ip = socket.gethostbyname(socket.gethostname())
 
 app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return send_file("mainpage.html")
+    return send_file("html/mainpage.html")
 
-
-
-@app.route('/firstpage')
+@app.route('/examplepage')
 def page2():
     return ("<h1>This is page 2!</h1>")
 
-app.run(host="0.0.0.0", port=8080, debug=True)
+@app.route('/number-adder')
+def number_adder():
+    return send_file("html/numberadder.html")
+
+@app.route('/number-adder/answer', methods=["post"])
+def number_adder_answer():
+    num1 = request.form["number1"]
+    num2 = request.form["number2"]
+    if num1.isnumeric() and num2.isnumeric():
+        num1 = int(num1)
+        num2 = int(num2)
+        total = num1 + num2
+        return f"Thanks! The total of {num1} and {num2} is {total}."
+    else:
+        total = "One or both of the inputs are not a number!"
+        return f"Sorry! {total}"
+
+app.run(host=f"{local_ip}", port=8080, debug=True)
 #app.run(host='localhost', port=8080, debug=True)
