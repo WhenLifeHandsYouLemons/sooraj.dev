@@ -5,11 +5,12 @@ import socket
 
 local_ip = socket.gethostbyname(socket.gethostname())
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, static_folder="C:/Users/2005s/Documents/Visual Studio Code/Flask, HTML, CSS, JS/Sooraj-Website/static")
 
 @app.route('/')
 def main():
-    return send_file("html/mainpage.html")
+    return send_file("templates/mainpage.html")
 
 @app.route('/examplepage')
 def page2():
@@ -17,7 +18,7 @@ def page2():
 
 @app.route('/number-adder')
 def number_adder():
-    return send_file("html/numberadder.html")
+    return send_file("templates/numberadder.html")
 
 @app.route('/number-adder/answer', methods=["post"])
 def number_adder_answer():
@@ -27,7 +28,7 @@ def number_adder_answer():
         num1 = int(num1)
         num2 = int(num2)
         total = num1 + num2
-        return f"Thanks! The total of {num1} and {num2} is {total}."
+        return send_file("templates/numberadderresult.html")
     else:
         total = "One or both of the inputs are not a number!"
         return f"Sorry! {total}"
