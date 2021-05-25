@@ -19,7 +19,7 @@ def main():
 
 @app.route('/examplepage')
 def page2():
-    return ("<h1>This is page 2!</h1>")
+    return ("<h1>This is an example page!</h1>")
 
 @app.route('/number-adder')
 def number_adder():
@@ -29,12 +29,14 @@ def number_adder():
 def number_adder_answer():
     num1 = request.form["number1"]
     num2 = request.form["number2"]
-    if num1.isnumeric() and num2.isnumeric():
+    # if num1.isnumeric() and num2.isnumeric():
+    try:
         num1 = int(num1)
         num2 = int(num2)
         total = num1 + num2
         return send_file("templates/numberadderresult.html")
-    else:
+    # else:
+    except:
         total = "One or both of the inputs are not a number!"
         return f"Sorry! {total}"
 
