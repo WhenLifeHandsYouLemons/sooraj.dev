@@ -6,8 +6,7 @@ import socket
 
 local_ip = socket.gethostbyname(socket.gethostname())
 
-# app = Flask(__name__)
-app = Flask(__name__, static_folder="C:/Users/2005s/Documents/Visual Studio Code/Flask, HTML, CSS, JS/Sooraj-Website/static")
+app = Flask(__name__)
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -15,7 +14,7 @@ def page_not_found(error):
 
 @app.route('/')
 def main():
-    return send_file("templates/mainpage.html")
+    return render_template("mainpage.html")
 
 @app.route('/examplepage')
 def page2():
@@ -23,7 +22,11 @@ def page2():
 
 @app.route('/number-adder')
 def number_adder():
-    return send_file("templates/numberadder.html")
+    return render_template("numberadder.html")
+
+@app.route('/sooraj-dev')
+def sooraj_dev():
+    return render_template("soorajdevpage.html")
 
 @app.route('/number-adder/answer', methods=["post"])
 def number_adder_answer():
@@ -34,12 +37,13 @@ def number_adder_answer():
         num1 = int(num1)
         num2 = int(num2)
         total = num1 + num2
-        return send_file("templates/numberadderresult.html")
+        return render_template("numberadderresult.html", total=total, num1=num1, num2=num2)
     # else:
     except:
         total = "One or both of the inputs are not a number!"
         return f"Sorry! {total}"
 
 if __name__ == '__main__':
-    app.run(host=f"{local_ip}", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
+    # app.run(host=f"192.168.1.11", port=8080, debug=True)
     # app.run(host='localhost', port=8080, debug=True)
