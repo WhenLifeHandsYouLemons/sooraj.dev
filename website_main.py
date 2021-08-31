@@ -26,7 +26,7 @@ def number_adder():
 
 @app.route('/sooraj-dev')
 def sooraj_dev():
-    return render_template("soorajdevpage.html")
+    return send_file("templates/soorajdevpage.html")
 
 @app.route('/number-adder/answer', methods=["post"])
 def number_adder_answer():
