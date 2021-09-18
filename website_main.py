@@ -44,6 +44,6 @@ def number_adder_answer():
         return f"Sorry! {total}"
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host=local_ip, port=8080, debug=True)
     # app.run(host=f"192.168.1.11", port=8080, debug=True)
     # app.run(host='localhost', port=8080, debug=True)
