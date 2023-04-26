@@ -58,59 +58,7 @@
   margin-bottom: 0;
 }
 
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-}
-
 .button_link {
   text-decoration: none;
-}
-
-.typing-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  color: rgb(0, 200, 0);
-  font-size: 30px;
-  margin-bottom: 50px;
-}
-
-.input-cursor {
-  display: inline-block;
-  width: 20px;
-  height: 42px;
-  background-color: rgb(200, 200, 200);
-  margin-left: 0px;
-  animation: blink .6s linear infinite alternate;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
