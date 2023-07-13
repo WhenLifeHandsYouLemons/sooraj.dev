@@ -52,19 +52,19 @@
 
                 if (!themeSwitchers.length) return;
 
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
                 for (const themeSwitcher of themeSwitchers) {
 
-                    const themeSwitcherText = document.querySelector('#theme-text');
-                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
-                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
-                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                        element.classList.remove('active');
-                        element.setAttribute('aria-pressed', 'false');
-                    });
-
-                    btnToActive.classList.add('active');
-                    btnToActive.setAttribute('aria-pressed', 'true');
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
                 }
             }
 
@@ -115,7 +115,7 @@
     <!-- Start: Header Dark -->
     <header class="header-dark" style="background: rgb(0, 0, 0);padding-bottom: 0px;">
         <!-- Start: Navigation Bar -->
-        <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
+        <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
             <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="index.html" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;text-shadow: 0px 0px 20px rgb(255, 255, 255);">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="font-family: 'JetBrains Mono', monospace;border-style: none;"><span class="visually-hidden" style="font-family: 'JetBrains Mono', monospace;">Toggle navigation</span><span class="navbar-toggler-icon" style="font-family: 'JetBrains Mono', monospace;filter: invert(100%);"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2" style="font-family: 'JetBrains Mono', monospace;">
                     <ul class="navbar-nav ms-auto" style="font-family: 'JetBrains Mono', monospace;">
