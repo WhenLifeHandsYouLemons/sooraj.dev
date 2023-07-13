@@ -1,15 +1,105 @@
 <!DOCTYPE html>
-<html lang="en" style="background: rgb(0, 0, 0);">
+<html data-bs-theme="auto" lang="en" style="background: rgb(0, 0, 0);">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sooraj.dev</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Projects Page</title>
+    <meta property="og:image" content="https://whenlifehandsyoulemons.github.io/sooraj.dev/assets/img/profile_photo.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="About Me Page">
+    <meta name="description" content="All of my projects, including photos, VFX, game &amp; app development, and others.">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="assets/css/Header-Dark.css">
     <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -21,7 +111,9 @@
 </head>
 
 <body style="background: rgb(0, 0, 0);">
+    <!-- Start: Header -->
     <header class="header-dark" style="background: rgb(0, 0, 0);">
+        <!-- Start: Navigation Bar -->
         <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
             <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="index.html" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;text-shadow: 0px 0px 20px rgb(255, 255, 255);">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="font-family: 'JetBrains Mono', monospace;border-style: none;"><span class="visually-hidden" style="font-family: 'JetBrains Mono', monospace;">Toggle navigation</span><span class="navbar-toggler-icon" style="font-family: 'JetBrains Mono', monospace;filter: invert(100%);"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2" style="font-family: 'JetBrains Mono', monospace;">
@@ -33,62 +125,64 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><!-- End: Navigation Bar -->
+        <!-- Start: Page Title -->
         <div class="container hero">
             <div class="row text-center">
                 <div class="col-md-8 offset-md-2 text-center">
                     <h1 class="text-center" data-aos="fade" data-aos-delay="200" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 60px;">Projects</h1>
                 </div>
             </div>
-        </div>
-    </header>
+        </div><!-- End: Page Title -->
+    </header><!-- End: Header -->
+    <!-- Start: Visual Effects Section -->
     <section class="d-md-flex d-lg-flex align-items-md-center align-items-lg-center highlight-blue" style="min-height: 100vh;background: linear-gradient(90deg, var(--bs-green), var(--bs-blue));">
         <div class="container">
+            <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 40px;">Visual Effects</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 25px;">The creativity that flows from advanced 3D software.</p>
-            </div>
-            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="visual_effects.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div>
+            </div><!-- End: Intro -->
+            <!-- Start: Buttons -->
+            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="visual_effects.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div><!-- End: Buttons -->
         </div>
-    </section>
-    <section class="d-md-flex d-lg-flex align-items-md-center align-items-lg-center highlight-blue" style="background: linear-gradient(-90deg, var(--bs-red), var(--bs-blue));min-height: 100vh;">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 40px;">Podcast</h2>
-                <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 25px;">A podcast that calms the nerves and excites the senses.</p>
-            </div>
-            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary disabled" role="button" data-aos="fade" data-aos-once="true" href="#" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div>
-        </div>
-    </section>
+    </section><!-- End: Visual Effects Section -->
+    <!-- Start: Photography Section -->
     <section class="d-md-flex d-lg-flex align-items-md-center align-items-lg-center highlight-blue" style="background: linear-gradient(90deg, var(--bs-red), var(--bs-warning));min-height: 100vh;">
         <div class="container">
+            <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 40px;">Photography</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 25px;">Creativity that strikes anywhere, anytime.</p>
-            </div>
-            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="photography.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div>
+            </div><!-- End: Intro -->
+            <!-- Start: Buttons -->
+            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="photography.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div><!-- End: Buttons -->
         </div>
-    </section>
+    </section><!-- End: Photography Section -->
+    <!-- Start: Coding Section -->
     <section class="d-md-flex d-lg-flex align-items-md-center align-items-lg-center highlight-blue" style="background: linear-gradient(-90deg, var(--bs-green), var(--bs-warning));min-height: 100vh;">
         <div class="container">
+            <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 40px;">Game &amp; App Development</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 25px;">The chance to kick back, relax, and have some fun.</p>
-            </div>
-            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="game_app_dev.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div>
+            </div><!-- End: Intro -->
+            <!-- Start: Buttons -->
+            <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="game_app_dev.html" style="color: rgb(0, 0, 0);border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;font-family: 'JetBrains Mono', monospace;">Learn More</a></div><!-- End: Buttons -->
         </div>
-    </section>
+    </section><!-- End: Coding Section -->
+    <!-- Start: Footer -->
     <footer class="footer-basic">
-        <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1>
+        <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="index.html">Home</a></li>
             <li class="list-inline-item"><a href="projects.html">Projects</a></li>
             <li class="list-inline-item"><a href="contact.html">Contact</a></li>
             <li class="list-inline-item"><a href="about.html">About</a></li>
-        </ul>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+        </ul><!-- End: Links -->
+    </footer><!-- End: Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>

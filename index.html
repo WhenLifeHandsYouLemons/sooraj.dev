@@ -1,15 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" style="background: rgb(0, 0, 0);">
+<html data-bs-theme="auto" lang="en" style="background: rgb(0, 0, 0);">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sooraj.dev</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Home Page</title>
+    <meta property="og:image" content="https://whenlifehandsyoulemons.github.io/sooraj.dev/assets/img/profile_photo.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="About Me Page">
+    <meta name="description" content="The home page.">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "sooraj.dev",
+            "url": "https://whenlifehandsyoulemons.github.io/sooraj.dev/"
+        }
+    </script>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="2000x2000" href="assets/img/profile_photo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="assets/css/Header-Dark.css">
     <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -21,7 +119,9 @@
 </head>
 
 <body style="background: rgb(0, 0, 0);">
+    <!-- Start: Header Dark -->
     <header class="header-dark" style="background: rgb(0, 0, 0);padding-bottom: 0px;">
+        <!-- Start: Navigation Bar -->
         <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
             <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="index.html" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;text-shadow: 0px 0px 20px rgb(255, 255, 255);">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="font-family: 'JetBrains Mono', monospace;border-style: none;"><span class="visually-hidden" style="font-family: 'JetBrains Mono', monospace;">Toggle navigation</span><span class="navbar-toggler-icon" style="font-family: 'JetBrains Mono', monospace;filter: invert(100%);"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2" style="font-family: 'JetBrains Mono', monospace;">
@@ -33,7 +133,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><!-- End: Navigation Bar -->
         <div class="container hero">
             <div class="row text-center">
                 <div class="col-md-8 offset-md-2 text-center">
@@ -41,18 +141,18 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header><!-- End: Header Dark -->
+    <!-- Start: About Me -->
     <section class="d-lg-flex align-items-lg-center" style="background: rgb(0, 80, 75);min-height: 100vh;">
         <div class="row text-center" style="width: 100vw;">
             <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2 align-self-center align-self-sm-center align-self-md-center align-self-lg-center align-self-xl-center align-self-xxl-center">
-                <h1 data-aos="fade" data-aos-delay="900" data-aos-once="true" style="color: var(--bs-teal);font-family: 'JetBrains Mono', monospace;font-weight: bold;margin-top: 50px;">About_Me(name)</h1>
-                <img class="rounded-circle img-fluid" data-aos="fade" data-aos-delay="1000" data-aos-once="true" style="background: rgb(0, 0, 0);border-style: none;border-top-style: none;/*border-top-color: rgb(255,;*/border-right-style: none;/*border-right-color: 255,;*/border-bottom-style: none;/*border-bottom-color: 255);*/border-left-style: none;/*border-left-color: 255,;*/filter: blur(0px);margin-bottom: 75px;margin-top: 75px;" src="assets/img/profile_photo.jpg" width="200px" height="200px">
-                <p class="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-                <p class="font-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;">// I'm a student who is passionate about technology and software development. My hobbies include 3D modelling, coding, and more.</p>
-                <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="contact.html" style="color: rgb(0, 150, 0);font-family: 'JetBrains Mono', monospace;background: transparent;font-size: 25px;margin-bottom: 50px;border-color: rgb(0, 150, 0);/*border-top-color: rgb(0,;*//*border-right-color: 150,;*//*border-bottom-color: 0);*//*border-left-color: 150,;*/">Contact Me</a></div>
+                <h1 data-aos="fade" data-aos-delay="900" data-aos-once="true" style="color: var(--bs-teal);font-family: 'JetBrains Mono', monospace;font-weight: bold;margin-top: 50px;">About_Me(name)</h1><img class="rounded-circle img-fluid" data-aos="fade" data-aos-delay="1000" data-aos-once="true" style="background: rgb(0, 0, 0);border-style: none;border-top-style: none;/*border-top-color: rgb(255,;*/border-right-style: none;/*border-right-color: 255,;*/border-bottom-style: none;/*border-bottom-color: 255);*/border-left-style: none;/*border-left-color: 255,;*/filter: blur(0px);margin-bottom: 75px;margin-top: 75px;" src="assets/img/profile_photo.jpg" width="200px" height="200px"><p class="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+                <p class="font-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;">// I'm a student who is passionate about technology and software development. My hobbies include 3D modelling, coding, and more.</p><!-- Start: Buttons -->
+                <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary" role="button" data-aos="fade" data-aos-once="true" href="contact.html" style="color: rgb(0, 150, 0);font-family: 'JetBrains Mono', monospace;background: transparent;font-size: 25px;margin-bottom: 50px;border-color: rgb(0, 150, 0);/*border-top-color: rgb(0,;*//*border-right-color: 150,;*//*border-bottom-color: 0);*//*border-left-color: 150,;*/">Contact Me</a></div><!-- End: Buttons -->
             </div>
         </div>
-    </section>
+    </section><!-- End: About Me -->
+    <!-- Start: Skills -->
     <section class="d-lg-flex align-items-lg-center" style="background: rgb(100, 25, 0);min-height: 100vh;">
         <div class="row text-center" style="width: 100vw;">
             <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2 text-center align-self-center align-self-sm-center align-self-md-center align-self-lg-center align-self-xl-center align-self-xxl-center">
@@ -63,27 +163,29 @@
                 <p class="font-monospace text-start" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;color: var(--bs-yellow);font-size: 30px;margin-bottom: 50px;">&gt;&gt; Blender {<br>&nbsp; &nbsp; &nbsp; &nbsp;Basic 3D modelling;<br>&nbsp; &nbsp; &nbsp; &nbsp;Lighting;<br>&nbsp; &nbsp; &nbsp; &nbsp;Animation;<br>&nbsp; &nbsp;}<br></p>
             </div>
         </div>
-    </section>
+    </section><!-- End: Skills -->
+    <!-- Start: Rubik's Cube Timer -->
     <section class="d-lg-flex align-items-lg-center" style="background: rgb(255, 255, 255);min-height: 100vh;">
         <div class="row text-center" style="width: 100vw;">
             <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2 text-center align-self-center align-self-sm-center align-self-md-center align-self-lg-center align-self-xl-center align-self-xxl-center">
                 <h1 data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;margin-top: 50px;color: rgb(0, 0, 0);">Rubik's Cube Timer</h1>
-                <p class="font-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;margin-bottom: 50px;margin-top: 100px;color: rgb(100, 100, 100);">A Rubik's Cube timer that will give you all the information you'll ever need. Right at your fingertips.</p>
-                <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary text-capitalize" role="button" data-aos="fade" data-aos-once="true" href="rubiks_cube_timer.html" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;font-size: 25px;border-style: none;/*border-top-color: rgb(0,;*//*border-right-color: 0,;*//*border-bottom-color: 0);*//*border-left-color: 0,;*/background: var(--bs-red);margin-bottom: 50px;">Learn More</a></div>
+                <p class="font-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;margin-bottom: 50px;margin-top: 100px;color: rgb(100, 100, 100);">A Rubik's Cube timer that will give you all the information you'll ever need. Right at your fingertips.</p><!-- Start: Buttons -->
+                <div data-aos="fade" data-aos-once="true" class="buttons"><a class="btn btn-primary text-capitalize" role="button" data-aos="fade" data-aos-once="true" href="rubiks_cube_timer.html" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;font-size: 25px;border-style: none;/*border-top-color: rgb(0,;*//*border-right-color: 0,;*//*border-bottom-color: 0);*//*border-left-color: 0,;*/background: var(--bs-red);margin-bottom: 50px;">Learn More</a></div><!-- End: Buttons -->
             </div>
         </div>
-    </section>
+    </section><!-- End: Rubik's Cube Timer -->
+    <!-- Start: Footer -->
     <footer class="footer-basic">
-        <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1>
+        <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="index.html">Home</a></li>
             <li class="list-inline-item"><a href="projects.html">Projects</a></li>
             <li class="list-inline-item"><a href="contact.html">Contact</a></li>
             <li class="list-inline-item"><a href="about.html">About</a></li>
-        </ul>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+        </ul><!-- End: Links -->
+    </footer><!-- End: Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>

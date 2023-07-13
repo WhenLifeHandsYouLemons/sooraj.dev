@@ -58,20 +58,3 @@
   background-color: transparent;
 }
 
-.navigation-clean .navbar-nav > li > .dropdown-menu {
-  margin-top: -5px;
-  box-shadow: none;
-  background-color: #fff;
-  border-radius: 2px;
-}
-
-.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item {
-  line-height: 2;
-  color: #37434d;
-}
-
-.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item:hover {
-  background: #eee;
-  color: inherit;
-}
-
