@@ -35,7 +35,7 @@
 }
 
 .header-dark .navbar .navbar-toggler {
-  border-color: #747474;
+  border-color: #FFFFFF;
 }
 
 .header-dark .navbar .navbar-toggler:hover, .header-dark .navbar-toggler:focus {
@@ -43,7 +43,7 @@
 }
 
 .header-dark .navbar .navbar-toggler {
-  color: #eee;
+  color: #FFFFFF;
 }
 
 .header-dark .navbar .navbar-collapse, .header-dark .navbar form {
