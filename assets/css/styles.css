@@ -1,0 +1,8 @@
+.background-img {
+  background-attachment: fixed;
+  background-position: initial;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/Others/home_page_background.png");
+}
+
