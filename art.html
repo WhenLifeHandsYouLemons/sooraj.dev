@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en" style="background: rgb(0, 0, 0);">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Art</title>
+    <meta name="twitter:image" content="https://sooraj.dev/assets/img/Others/profile_photo_blank_bg.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://sooraj.dev/assets/img/Others/profile_photo.jpg">
+    <meta name="twitter:description" content="The results of me drawing and splashing digital paint on a canvas.">
+    <meta name="description" content="The results of me drawing and splashing digital paint on a canvas.">
+    <meta name="twitter:title" content="Art Page">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg">
+    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/Others/profile_photo_blank_bg.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Image-Grid.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TVV7PE2C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K6TVV7PE2C');
+</script>
+
+<body style="background: rgb(0, 0, 0);">
+    <!-- Start: Header -->
+    <header class="header-dark" style="background: rgb(0, 0, 0);">
+        <!-- Start: Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="index.html" style="font-family: 'JetBrains Mono', monospace;font-size: 30px;text-shadow: 0px 0px 20px rgb(255, 255, 255);">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="font-family: 'JetBrains Mono', monospace;filter: brightness(200%) contrast(0%);border-style: none;"><span class="visually-hidden" style="font-family: 'JetBrains Mono', monospace;">Toggle navigation</span><span class="navbar-toggler-icon" style="font-family: 'JetBrains Mono', monospace;"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-2" style="font-family: 'JetBrains Mono', monospace;">
+                    <ul class="navbar-nav ms-auto" style="font-family: 'JetBrains Mono', monospace;">
+                        <li class="nav-item" style="font-family: 'JetBrains Mono', monospace;"><a class="nav-link" data-aos="fade" data-aos-delay="200" data-aos-once="true" href="index.html" style="font-family: 'JetBrains Mono', monospace;">Home</a></li>
+                        <li class="nav-item" style="font-family: 'JetBrains Mono', monospace;"><a class="nav-link" data-aos="fade" data-aos-delay="300" data-aos-once="true" href="projects.html" style="font-family: 'JetBrains Mono', monospace;">Projects</a></li>
+                        <li class="nav-item" style="font-family: 'JetBrains Mono', monospace;"><a class="nav-link" data-aos="fade" data-aos-delay="400" data-aos-once="true" href="contact.html" style="font-family: 'JetBrains Mono', monospace;">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav><!-- End: Navigation Bar -->
+        <!-- Start: Page Title -->
+        <div class="container hero">
+            <div class="row text-center justify-content-center" style="margin: 0px;padding: 0px;">
+                <div class="col-md-8 offset-md-2 text-center" style="margin: 0px;">
+                    <h1 class="text-break text-center" data-aos="fade" data-aos-delay="200" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 60px;">Art</h1>
+                </div>
+            </div>
+        </div><!-- End: Page Title -->
+    </header><!-- End: Header -->
+    <!-- Start: Art Gallery -->
+    <section class="photo-gallery" style="padding-top: 100px;">
+        <div class="container" style="padding: 0px;margin: 0px;max-width: 100%;">
+            <!-- Start: Art Responsive Image Grid -->
+            <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;">
+                <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" id="lighthouse" src="assets/img/Art%20Page/Lighthouse.jpg"></div>
+                <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" id="chinese_artwork" src="assets/img/Art%20Page/Chinese_Artwork.jpg"></div>
+            </div><!-- End: Art Responsive Image Grid -->
+        </div>
+    </section><!-- End: Art Gallery -->
+    <!-- Start: Footer -->
+    <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);">
+        <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html">Home</a></li>
+            <li class="list-inline-item"><a href="projects.html">Projects</a></li>
+            <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+        </ul><!-- End: Links -->
+    </footer><!-- End: Footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/art-transition.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+    <script src="assets/js/typing-effect.js"></script>
+    <script src="assets/js/vendor/typed.js/typed.min.js"></script>
+</body>
+
+</html>
