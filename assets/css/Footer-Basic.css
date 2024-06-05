@@ -31,3 +31,15 @@
   padding: 5%;
 }
 
+@media (pointer:coarse) {
+  h1 {
+    font-size: 12vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 12.9vw;
+  }
+}
+

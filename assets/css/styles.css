@@ -1,3 +1,5 @@
+/* For changing the background */
+
 @media (pointer:none), (pointer:coarse) {
   .background-img {
     background-attachment: fixed;
@@ -15,6 +17,20 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../../assets/img/others/home_page_background.png");
+  }
+}
+
+/* For changing the page title size */
+
+@media screen and (max-width: 500px) {
+  .page-title {
+    font-size: 12.9vw;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .page-title {
+    font-size: 60px;
   }
 }
 
