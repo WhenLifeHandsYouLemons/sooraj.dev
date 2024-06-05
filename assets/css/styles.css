@@ -1,3 +1,7 @@
+html {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 /* For changing the background */
 
 @media (pointer:none), (pointer:coarse) {
@@ -56,9 +60,5 @@
   .page-body-text {
     font-size: 5vw;
   }
-}
-
-html {
-  font-family: 'JetBrains Mono', monospace;
 }
 

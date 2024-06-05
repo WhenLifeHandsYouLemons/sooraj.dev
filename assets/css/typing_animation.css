@@ -1,0 +1,82 @@
+/* Used for typing animations */
+
+/* These are the animation properties */
+
+/* Note: They have one extra char width and step count than the actual number of chars in the string. */
+
+.typing-anim-4 {
+  width: 5ch;
+  animation: typing 1.5s steps(5), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-3 {
+  width: 4ch;
+  animation: typing 1.5s steps(4), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-10 {
+  width: 11ch;
+  animation: typing 1.5s steps(11), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-11 {
+  width: 12ch;
+  animation: typing 1.5s steps(12), blink .5s step-end infinite alternate;
+  animation-delay: 1s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-8 {
+  width: 9ch;
+  animation: typing 1.5s steps(9), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-20 {
+  width: 21ch;
+  animation: typing 1.5s steps(21), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-14 {
+  width: 15ch;
+  animation: typing 1.5s steps(15), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+/* These are named keyframe properties */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing-anim-container {
+  display: grid;
+  place-items: center;
+}
+
