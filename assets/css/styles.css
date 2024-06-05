@@ -20,7 +20,7 @@
   }
 }
 
-/* For changing the page title size */
+/* For changing the text size dynamically */
 
 @media screen and (max-width: 500px) {
   .page-title {
@@ -32,5 +32,33 @@
   .page-title {
     font-size: 60px;
   }
+}
+
+@media screen and (min-width: 500px) {
+  .page-heading {
+    font-size: 37px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page-heading {
+    font-size: 9vw;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .page-body-text {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page-body-text {
+    font-size: 5vw;
+  }
+}
+
+html {
+  font-family: 'JetBrains Mono', monospace;
 }
 
