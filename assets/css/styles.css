@@ -4,23 +4,39 @@ html {
 
 /* For changing the background */
 
-@media (pointer:none), (pointer:coarse) {
-  .background-img {
-    background-attachment: fixed;
-    background-position: right;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgb(0, 0, 0);
+@media (pointer:fine) {
+  .background-svg-1 {
+    z-index: 0;
+    position: fixed;
+    top: 30%;
+    left: -10%;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
   }
 }
 
 @media (pointer:fine) {
-  .background-img {
-    background-attachment: fixed;
-    background-position: initial;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../../assets/img/others/home_page_background.png");
+  .background-svg-2 {
+    z-index: 0;
+    position: fixed;
+    top: -10%;
+    right: -10%;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+}
+
+@media (pointer:fine) {
+  .background-svg-3 {
+    z-index: 0;
+    position: fixed;
+    bottom: -25%;
+    right: 30%;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
   }
 }
 
