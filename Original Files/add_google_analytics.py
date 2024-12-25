@@ -1,3 +1,4 @@
+# Add this to "run custom script" in Bootstrap Studio: C:\Users\User\Documents\GitHub\sooraj.dev\add_google_analytics.exe
 import os
 import sys
 
