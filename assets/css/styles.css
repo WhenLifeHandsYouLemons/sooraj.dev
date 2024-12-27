@@ -16,6 +16,18 @@ html {
   }
 }
 
+@media (pointer:coarse) {
+  .background-svg-1 {
+    z-index: 0;
+    position: fixed;
+    top: 30%;
+    left: -50%;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 @media (pointer:fine) {
   .background-svg-2 {
     z-index: 0;
@@ -28,6 +40,18 @@ html {
   }
 }
 
+@media (pointer:coarse) {
+  .background-svg-2 {
+    z-index: 0;
+    position: fixed;
+    top: -20%;
+    right: -50%;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 @media (pointer:fine) {
   .background-svg-3 {
     z-index: 0;
@@ -37,6 +61,18 @@ html {
     -ms-transform: scale(2);
     -webkit-transform: scale(2);
     transform: scale(2);
+  }
+}
+
+@media (pointer:coarse) {
+  .background-svg-3 {
+    z-index: 0;
+    position: fixed;
+    bottom: -25%;
+    right: -50%;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
