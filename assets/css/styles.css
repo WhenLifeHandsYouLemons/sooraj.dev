@@ -2,6 +2,10 @@ html {
   font-family: 'JetBrains Mono', monospace;
 }
 
+body {
+  background-color: rgb(0, 0, 0);
+}
+
 /* For changing the background */
 
 @media (pointer:fine) {
