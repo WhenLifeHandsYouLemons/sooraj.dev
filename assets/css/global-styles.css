@@ -1,3 +1,5 @@
+/* For overall website styles */
+
 html {
   font-family: 'JetBrains Mono', monospace;
 }
@@ -118,7 +120,7 @@ body {
   }
 }
 
-/* For auto-filling the screen height */
+/* For auto-sizing the page to minimum height */
 
 body {
   display: flex;

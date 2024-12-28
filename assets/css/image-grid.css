@@ -1,3 +1,5 @@
+/* For individual image and row/column styles */
+
 * {
   box-sizing: border-box;
 }
@@ -60,5 +62,34 @@
   .rig-p {
     font-size: 16px;
   }
+}
+
+/* For overall image gallery styles */
+
+.photo-gallery h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .photo-gallery h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+  }
+}
+
+.photo-gallery .intro {
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.photo-gallery .photos {
+  padding-bottom: 20px;
+}
+
+.photo-gallery .item {
+  padding-bottom: 30px;
 }
 
