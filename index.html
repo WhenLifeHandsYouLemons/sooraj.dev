@@ -121,16 +121,26 @@
     <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/global-styles.css">
     <link rel="stylesheet" href="assets/css/header-styles.css">
     <link rel="stylesheet" href="assets/css/typing-animation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha512-NVt7pmp5f+3eWRPO1h4A1gCf4opn4r5z2wS1mi7AaVcTzE9wDJ6RzMqSygjDzYHLp+mAJ2/qzXXDHar6IQwddQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/footer-styles.css">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TVV7PE2C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K6TVV7PE2C');
+</script>
 
 <body>
     <!-- Start: Random Shapes --><div class="background-images"></div><!-- End: Random Shapes -->
@@ -156,141 +166,122 @@
             </div>
         </div>
     </header><!-- End: Header Dark -->
-    <!-- Start: About Me -->
-    <section class="d-flex justify-content-center" style="background: linear-gradient(rgba(25, 25, 25, 0.85) 49%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0);min-height: 100vh;margin: 0px;padding-bottom: 50px;padding-top: 50px;backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <div class="row text-center justify-content-center" style="width: 100%;margin: 0px;">
-            <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px;">
-                <h1 class="text-break align-self-center align-self-sm-center align-self-md-center align-self-lg-center align-self-xl-center align-self-xxl-center page-heading" data-aos="fade" data-aos-delay="900" data-aos-once="true" style="color: rgb(32, 201, 151);font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 5px rgb(32, 201, 151);">/* About Me */</h1><img class="rounded-circle img-fluid" data-aos="fade" data-aos-delay="1000" data-aos-once="true" style="background: rgb(0, 0, 0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;margin-bottom: 75px;margin-top: 75px;box-shadow: 0px 0px 50px 20px rgb(0, 0, 0);" src="assets/img/others/profile_photo.jpg" width="200px" height="200px"><p class="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-                <p class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center page-body-text" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);margin-bottom: 50px;">// I'm a student who is passionate about technology and software development. My hobbies include 3D modelling, coding, and <a href="projects.html">more</a>.</p><!-- Start: Buttons -->
-                <div data-aos="fade" data-aos-once="true"><a class="btn btn-primary page-body-text" role="button" data-aos="fade" data-aos-once="true" href="contact.html" style="color: rgb(255, 50, 50);font-family: 'JetBrains Mono', monospace;background: rgba(0, 0, 0, 0);border-width: 2px;border-color: rgb(150, 0, 0);">Contact Me</a></div><!-- End: Buttons -->
+    <!-- Start: Background Blur -->
+    <div style="background: linear-gradient(rgba(25, 25, 25, 0.85) 35%, rgba(0, 0, 0, 0) 60%);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
+        <!-- Start: About Me -->
+        <section class="d-flex justify-content-center" style="min-height: 100vh;margin: 0px;padding-bottom: 50px;padding-top: 50px;">
+            <div class="row text-center justify-content-center" style="width: 100%;margin: 0px;">
+                <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px;">
+                    <h1 class="text-break align-self-center align-self-sm-center align-self-md-center align-self-lg-center align-self-xl-center align-self-xxl-center page-heading" data-aos="fade" data-aos-delay="900" data-aos-once="true" style="color: rgb(32, 201, 151);font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 5px rgb(32, 201, 151);">/* About Me */</h1><img class="rounded-circle img-fluid" data-aos="fade" data-aos-delay="1000" data-aos-once="true" style="background: rgb(0, 0, 0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;margin-bottom: 75px;margin-top: 75px;box-shadow: 0px 0px 50px 20px rgb(0, 0, 0);" src="assets/img/others/profile_photo.jpg" width="200px" height="200px"><p class="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);font-size: 30px;margin-bottom: 50px;"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+                    <p class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center page-body-text" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;color: rgb(0, 200, 0);margin-bottom: 50px;">// I'm a student who is passionate about technology and software development. My hobbies include 3D modelling, coding, and <a href="projects.html">more</a>.</p><!-- Start: Buttons -->
+                    <div data-aos="fade" data-aos-once="true"><a class="btn btn-primary page-body-text" role="button" data-aos="fade" data-aos-once="true" href="contact.html" style="color: rgb(255, 50, 50);font-family: 'JetBrains Mono', monospace;background: rgba(0, 0, 0, 0);border-width: 2px;border-color: rgb(150, 0, 0);">Contact Me</a></div><!-- End: Buttons -->
+                </div>
             </div>
-        </div>
-    </section><!-- End: About Me -->
-    <!-- Start: Skills -->
-    <section class="d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;padding-top: 25px;backdrop-filter: blur(25px);-webkit-backdrop-filter: blur(25px);background: rgba(0, 0, 0, 0);">
-        <h1 class="text-break page-heading" data-aos="fade" data-aos-once="true" style="color: rgb(13, 110, 253);font-family: 'JetBrains Mono', monospace;font-weight: bold;margin-bottom: 50px;text-shadow: 0px 0px 5px rgb(13, 110, 253);">/* Skills */</h1><!-- Start: Cards -->
-        <div style="width: 100%;height: 100%;">
-            <div class="d-flex flex-row flex-grow-0 flex-fill justify-content-center align-items-center flex-wrap m-auto align-items-lg-center" style="width: fit-content;height: fit-content;">
-                <!-- Start: Skills Cards -->
-                <div class="d-flex flex-row flex-grow-0 justify-content-evenly flex-wrap rig-row" style="padding: 20px 8px;background: rgba(10, 10, 10, 0.75);border-radius: 50px;box-shadow: 0px 0px 50px 50px rgba(10, 10, 10, 0.75);">
-                    <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
-                        <!-- Start: Programming -->
-                        <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
-                            <div class="container" style="max-width: none;max-height: none;margin: 0px;">
-                                <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Computer Programming<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Python<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Pygame<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Flask<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Tkinter<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Pip packages<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Java<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> HTML + CSS<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;JavaScript<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;p5.js<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> C, C#<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Racket<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Database management<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;R</p>
+        </section><!-- End: About Me -->
+        <!-- Start: Skills -->
+        <section class="d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;padding-top: 25px;">
+            <h1 class="text-break page-heading" data-aos="fade" data-aos-once="true" style="color: rgb(13, 110, 253);font-family: 'JetBrains Mono', monospace;font-weight: bold;margin-bottom: 50px;text-shadow: 0px 0px 5px rgb(13, 110, 253);">/* Skills */</h1><!-- Start: Cards -->
+            <div style="width: 100%;height: 100%;">
+                <div class="d-flex flex-row flex-grow-0 flex-fill justify-content-center align-items-center flex-wrap align-items-lg-center m-auto" style="width: fit-content;height: fit-content;">
+                    <!-- Start: Skills Cards -->
+                    <div class="d-flex flex-row flex-grow-0 justify-content-evenly flex-wrap rig-row" style="padding: 20px 0px;">
+                        <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
+                            <!-- Start: Programming -->
+                            <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
+                                <div class="container" style="max-width: none;max-height: none;margin: 0px;">
+                                    <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Computer Programming<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Python<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Pygame<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Flask<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Tkinter<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Pip packages<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Java<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> HTML + CSS<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;JavaScript<br>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;p5.js<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> C, C#<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Racket<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Database management<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;R</p>
+                                </div>
+                            </section><!-- End: Programming -->
+                        </div>
+                        <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
+                            <!-- Start: Adobe -->
+                            <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
+                                <div class="container" style="max-width: none;max-height: none;margin: 0px;">
+                                    <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Adobe<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Premiere Pro<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Photoshop<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> XD</p>
+                                </div>
+                            </section><!-- End: Adobe -->
+                            <!-- Start: Others -->
+                            <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
+                                <div class="container" style="max-width: none;max-height: none;margin: 0px;">
+                                    <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Others<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Git Version Control<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Davinci Resolve<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Figma<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Circuit Design<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Unity Game Engine<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Fusion360</p>
+                                </div>
+                            </section><!-- End: Others -->
+                        </div>
+                        <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
+                            <!-- Start: Blender -->
+                            <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
+                                <div class="container" style="max-width: none;max-height: none;margin: 0px;">
+                                    <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Blender<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> 3D scene modelling<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Lighting<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Character animation<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Object detailing</p>
+                                </div>
+                            </section><!-- End: Blender -->
+                            <!-- Start: Microsoft -->
+                            <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
+                                <div class="container" style="max-width: none;max-height: none;margin: 0px;">
+                                    <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Microsoft&nbsp;<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Power BI<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Excel</p>
+                                </div>
+                            </section><!-- End: Microsoft -->
+                        </div>
+                    </div><!-- End: Skills Cards -->
+                </div>
+            </div><!-- End: Cards -->
+        </section><!-- End: Skills -->
+        <!-- Start: Recent Projects -->
+        <section class="justify-content-center" style="padding-top: 50px;background: linear-gradient(rgba(0, 0, 0, 0) 11%, rgba(10, 10, 10, 0.85));">
+            <h1 class="text-break page-heading" style="font-family: 'JetBrains Mono', monospace;color: rgb(255, 100, 0);margin-bottom: 10px;text-align: center;margin-top: 0px;margin-right: 10px;margin-left: 10px;text-shadow: 0px 0px 5px;">/* Recent Projects */</h1><!-- Start: Project Cards -->
+            <section class="d-flex flex-row flex-grow-0 flex-fill justify-content-center align-items-center flex-wrap align-items-lg-center m-auto">
+                <div class="row gx-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center" style="margin: 0px;">
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1690" height="1360" src="assets/img/software_dev/boids.png">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">Boids Playground</h4>
+                                <p class="card-text" style="color: black;">A website for playing around with the boids flocking algorithm.</p><a class="btn btn-outline-dark border-2" role="button" href="https://boids.sooraj.dev/" style="font-weight: bold;">Visit</a>
                             </div>
-                        </section><!-- End: Programming -->
+                        </div>
                     </div>
-                    <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
-                        <!-- Start: Adobe -->
-                        <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
-                            <div class="container" style="max-width: none;max-height: none;margin: 0px;">
-                                <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Adobe<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Premiere Pro<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Photoshop<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> XD</p>
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2360" height="1640" src="assets/img/software_dev/fish_n_chimps.jpg">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">Fish 'n Chimps</h4>
+                                <p class="card-text" style="color: black;">An action-packed aquatic adventure where players control a monkey navigating through dangerous waters.</p><a class="btn btn-outline-dark border-2" role="button" href="https://banana-byte-entertainment.itch.io/fish-n-chimps" rel="external" style="font-weight: bold;">Download</a>
                             </div>
-                        </section><!-- End: Adobe -->
-                        <!-- Start: Others -->
-                        <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
-                            <div class="container" style="max-width: none;max-height: none;margin: 0px;">
-                                <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Others<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Git Version Control<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Davinci Resolve<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Figma<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Circuit Design<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span>&nbsp;Unity Game Engine</p>
-                            </div>
-                        </section><!-- End: Others -->
+                        </div>
                     </div>
-                    <div class="rig-column" style="max-width: 33.33%;min-width: 300px;">
-                        <!-- Start: Blender -->
-                        <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
-                            <div class="container" style="max-width: none;max-height: none;margin: 0px;">
-                                <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Blender<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> 3D scene modelling<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Lighting<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Animation</p>
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/others/IMG_5376.jpg">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">Encryptext</h4>
+                                <p class="card-text" style="color: black;">A small text editor that elevates your editing experience with large features.</p><a class="btn btn-outline-dark border-2" role="button" href="https://encryptext.sooraj.dev" style="font-weight: bold;">Learn More</a>
                             </div>
-                        </section><!-- End: Blender -->
-                        <!-- Start: Microsoft -->
-                        <section class="d-flex justify-content-center align-items-center align-items-lg-center" style="background: transparent;max-width: none;margin: 0px;padding: 0px;max-height: none;padding-top: 20px;margin-top: 8px;">
-                            <div class="container" style="max-width: none;max-height: none;margin: 0px;">
-                                <p class="text-break text-start page-body-text" data-aos="fade" data-aos-once="true" style="color: rgb(255, 255, 255);font-family: 'JetBrains Mono', monospace;max-width: none;"><span style="color: rgb(150, 150, 150);">&gt;&gt;</span> Microsoft&nbsp;<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Power BI<br>&nbsp; &nbsp;<span style="color: rgb(150, 150, 150);">|-&gt;</span> Excel</p>
-                            </div>
-                        </section><!-- End: Microsoft -->
+                        </div>
                     </div>
-                </div><!-- End: Skills Cards -->
-            </div>
-        </div><!-- End: Cards -->
-    </section><!-- End: Skills -->
-    <!-- Start: Recent Projects -->
-    <section class="justify-content-center" style="padding-top: 50px;background: linear-gradient(rgba(0, 0, 0, 0) 11%, rgba(10, 10, 10, 0.85));backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-break page-heading" style="font-family: 'JetBrains Mono', monospace;color: rgb(255, 100, 0);margin-bottom: 10px;text-align: center;margin-top: 0px;margin-right: 10px;margin-left: 10px;text-shadow: 0px 0px 5px;">/* Recent Projects */</h1><!-- Start: Project Cards -->
-        <section class="d-flex flex-row flex-grow-0 flex-fill justify-content-center align-items-center flex-wrap m-auto align-items-lg-center">
-            <!-- Start: Boids -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(&quot;assets/img/software_dev/boids.png&quot;) center / cover no-repeat;border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(50, 255, 0);font-family: 'JetBrains Mono', monospace;max-width: 500px;">Boids <span style="color: rgb(255, 15, 0);">Playground</span></h2>
-                        <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(200, 200, 200);font-family: 'JetBrains Mono', monospace;font-size: 22px;max-width: 500px;">A website for playing around with the boids flocking algorithm.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex justify-content-center align-items-center" data-aos="fade" data-aos-once="true" style="max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://boids.sooraj.dev/" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Visit</a></div><!-- End: Buttons -->
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="512" height="512" src="assets/img/software_dev/fastcalc_app_icon.jpg">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">FastCalc</h4>
+                                <p class="card-text" style="color: black;">A small, simple, and light calculator app. Now available on the Google Play Store.</p><a class="btn btn-outline-dark border-2" role="button" href="https://play.google.com/store/apps/details?id=com.soorajdev.fast_calc" rel="external" style="font-weight: bold;">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="160" height="160" src="assets/img/software_dev/male_cook_emoji.jpg">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">Chef Chat</h4>
+                                <p class="card-text" style="color: black;">Make, adjust, save, and download custom recipes with a personal chef powered by AI right in your browser.</p><a class="btn btn-outline-dark border-2" role="button" href="https://ai-personal-chef.streamlit.app/" rel="external" style="font-weight: bold;">Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                        <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="960" height="540" src="assets/img/vfx/stylised/IMG_8552.jpg">
+                            <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
+                                <h4 class="card-title" style="color: black;">LED Light Wall</h4>
+                                <p class="card-text" style="color: black;">A passion project, made independently, and exclusively by two high school students.</p><a class="btn btn-outline-dark border-2" role="button" href="https://whenlifehandsyoulemons.github.io/LED-Light-Wall/" style="font-weight: bold;">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section><!-- End: Boids -->
-            <!-- Start: GravityGrid -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0,0,0,0.75)), url(&quot;assets/img/software_dev/gravitygrid_website_icon.jpg&quot;) center / 100% repeat-x, rgb(250, 252, 238);border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;color: rgb(255, 255, 255);margin-bottom: 25px;max-width: 500px;">GravityGrid</h2>
-                        <p class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 22px;margin-bottom: 16px;color: rgb(200, 200, 200);max-width: 500px;">An interactive, 2D, grid-based particle simulator.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center" data-aos="fade" data-aos-once="true" style="padding: 14px 24px;max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://gravitygrid.sooraj.dev" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Visit</a></div><!-- End: Buttons -->
-                </div>
-            </section><!-- End: GravityGrid -->
-            <!-- Start: Encryptext -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="background: rgb(10, 10, 10);border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(50, 255, 0);font-family: 'JetBrains Mono', monospace;max-width: 500px;">Encryptext</h2>
-                        <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 175, 0);font-family: 'JetBrains Mono', monospace;font-size: 22px;max-width: 500px;">A small text editor that elevates your editing experience with large features.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex justify-content-center align-items-center" data-aos="fade" data-aos-once="true" style="max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://encryptext.sooraj.dev" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Learn More</a></div><!-- End: Buttons -->
-                </div>
-            </section><!-- End: Encryptext -->
-            <!-- Start: FastCalc -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 100%), url(&quot;assets/img/software_dev/fastcalc_app_icon.jpg&quot;) center / 95% space;border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(67,168,231);font-family: 'JetBrains Mono', monospace;max-width: 500px;">FastCalc</h2>
-                        <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(27,128,191);font-family: 'JetBrains Mono', monospace;font-size: 22px;max-width: 500px;">A small, simple, and light calculator app. Now available on the Google Play Store.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex justify-content-center align-items-center" data-aos="fade" data-aos-once="true" style="max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://play.google.com/store/apps/details?id=com.soorajdev.fast_calc" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Learn More</a></div><!-- End: Buttons -->
-                </div>
-            </section><!-- End: FastCalc -->
-            <!-- Start: Chef Chat -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 99%), url(&quot;assets/img/software_dev/male_cook_emoji.jpg&quot;) center / contain space;border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;color: rgb(255, 255, 255);margin-bottom: 25px;max-width: 500px;">Chef Chat</h2>
-                        <p class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 22px;margin-bottom: 16px;color: rgb(200, 200, 200);max-width: 500px;">Make, adjust, save, and download custom recipes with a personal chef powered by AI right in your browser.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center" data-aos="fade" data-aos-once="true" style="padding: 14px 24px;max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://ai-personal-chef.streamlit.app/" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Visit</a></div><!-- End: Buttons -->
-                </div>
-            </section><!-- End: Chef Chat -->
-            <!-- Start: LED Light Wall -->
-            <section class="d-flex d-lg-flex align-items-center align-items-lg-center" style="border-radius: 50px;max-width: 425px;max-height: 380px;margin: 25px;padding: 25px 0px;min-width: 350px;min-height: 350px;background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5) 99%), url(&quot;assets/img/vfx/stylised/IMG_8552.jpg&quot;) center / cover no-repeat;box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);">
-                <div class="container" style="max-width: 960px;max-height: 280px;">
-                    <!-- Start: Intro -->
-                    <div>
-                        <h2 class="text-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;color: rgb(244, 219, 96);margin-bottom: 25px;max-width: 500px;">LED Light Wall</h2>
-                        <p class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center" data-aos="fade" data-aos-once="true" style="font-family: 'JetBrains Mono', monospace;font-size: 22px;margin-bottom: 16px;color: rgb(204, 179, 56);max-width: 500px;">A passion project, made independently, and exclusively by two high school students.</p>
-                    </div><!-- End: Intro -->
-                    <!-- Start: Buttons -->
-                    <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center" data-aos="fade" data-aos-once="true" style="padding: 14px 24px;max-width: 500px;max-height: 60px;"><a class="btn btn-primary text-capitalize d-flex d-lg-flex align-items-center align-items-lg-center" role="button" data-aos="fade" data-aos-once="true" href="https://whenlifehandsyoulemons.github.io/LED-Light-Wall/" style="color: rgb(0, 0, 0);font-family: 'JetBrains Mono', monospace;font-size: 18px;border-style: none;background: var(--bs-red);font-weight: bold;padding: 14px 24px;max-width: 172px;max-height: 48px;">Learn More</a></div><!-- End: Buttons -->
-                </div>
-            </section><!-- End: LED Light Wall -->
-        </section><!-- End: Project Cards -->
-    </section><!-- End: Recent Projects -->
+            </section><!-- End: Project Cards -->
+        </section><!-- End: Recent Projects -->
+    </div><!-- End: Background Blur -->
     <!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
         <h1 class="text-center" style="font-family: 'JetBrains Mono', monospace;font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
@@ -301,9 +292,9 @@
         </ul><!-- End: Links -->
     </footer><!-- End: Footer -->
     <!-- Start: Mastodon verification link --><a style="display: none;" rel="me" href="https://mastodon.social/@whenlifehandsyoulemons">Mastodon</a><!-- End: Mastodon verification link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="assets/js/background_randomiser.js"></script>

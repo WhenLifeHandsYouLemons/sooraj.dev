@@ -22,7 +22,7 @@ body {
   }
 }
 
-@media (pointer:coarse) {
+@media (pointer:coarse) and (max-width: 800px) {
   .background-svg-1 {
     z-index: 0;
     position: fixed;
@@ -31,6 +31,30 @@ body {
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 600px) and (max-width: 800px) {
+  .background-svg-1 {
+    z-index: 0;
+    position: fixed;
+    top: 30%;
+    left: -20%;
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 800px) {
+  .background-svg-1 {
+    z-index: 0;
+    position: fixed;
+    top: 30%;
+    left: -30%;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
   }
 }
 
@@ -46,7 +70,7 @@ body {
   }
 }
 
-@media (pointer:coarse) {
+@media (pointer:coarse) and (max-width: 800px) {
   .background-svg-2 {
     z-index: 0;
     position: fixed;
@@ -55,6 +79,30 @@ body {
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 600px) and (max-width: 800px) {
+  .background-svg-2 {
+    z-index: 0;
+    position: fixed;
+    top: -20%;
+    right: -20%;
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 800px) {
+  .background-svg-2 {
+    z-index: 0;
+    position: fixed;
+    top: -20%;
+    right: -30%;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
   }
 }
 
@@ -70,7 +118,7 @@ body {
   }
 }
 
-@media (pointer:coarse) {
+@media (pointer:coarse) and (max-width: 800px) {
   .background-svg-3 {
     z-index: 0;
     position: fixed;
@@ -79,6 +127,30 @@ body {
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 600px) and (max-width: 800px) {
+  .background-svg-3 {
+    z-index: 0;
+    position: fixed;
+    bottom: -30%;
+    right: 0%;
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@media (pointer:coarse) and (min-width: 800px) {
+  .background-svg-3 {
+    z-index: 0;
+    position: fixed;
+    bottom: -30%;
+    right: 10%;
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
   }
 }
 
