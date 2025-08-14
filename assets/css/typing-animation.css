@@ -4,6 +4,14 @@
 
 /* Note: They have one extra char width and step count than the actual number of chars in the string. */
 
+.typing-anim-3 {
+  width: 4ch;
+  animation: typing 1.5s steps(4), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
 .typing-anim-4 {
   width: 5ch;
   animation: typing 1.5s steps(5), blink .5s step-end infinite alternate;
@@ -12,9 +20,33 @@
   border-right: 3px solid;
 }
 
-.typing-anim-3 {
-  width: 4ch;
-  animation: typing 1.5s steps(4), blink .5s step-end infinite alternate;
+.typing-anim-6 {
+  width: 7ch;
+  animation: typing 1.5s steps(7), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-7 {
+  width: 8ch;
+  animation: typing 1.5s steps(8), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-8 {
+  width: 9ch;
+  animation: typing 1.5s steps(9), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-9 {
+  width: 10ch;
+  animation: typing 1.5s steps(10), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -37,9 +69,18 @@
   border-right: 3px solid;
 }
 
-.typing-anim-8 {
-  width: 9ch;
-  animation: typing 1.5s steps(9), blink .5s step-end infinite alternate;
+.typing-anim-12 {
+  width: 13ch;
+  animation: typing 1.5s steps(13), blink .5s step-end infinite alternate;
+  animation-delay: 1s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.typing-anim-14 {
+  width: 15ch;
+  animation: typing 1.5s steps(15), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -58,14 +99,6 @@
 .typing-anim-21 {
   width: 22ch;
   animation: typing 1.5s steps(22), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-}
-
-.typing-anim-14 {
-  width: 15ch;
-  animation: typing 1.5s steps(15), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
