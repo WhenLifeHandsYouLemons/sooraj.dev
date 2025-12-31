@@ -78,6 +78,15 @@
   border-right: 3px solid;
 }
 
+.typing-anim-17 {
+  width: 18ch;
+  animation: typing 1.5s steps(18), blink .5s step-end infinite alternate;
+  animation-delay: 1s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
 .typing-anim-14 {
   width: 15ch;
   animation: typing 1.5s steps(15), blink .5s step-end infinite alternate;
