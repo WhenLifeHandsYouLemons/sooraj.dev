@@ -17,11 +17,11 @@
     <link rel="canonical" href="https://sooraj.dev/photography.html">
     <meta property="og:url" content="https://sooraj.dev/photography.html">
     <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
-    <meta name="twitter:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="sooraj.dev">
-    <meta property="og:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
     <meta name="twitter:title" content="Photography">
     <meta name="twitter:description" content="All the photos I take when going around the world.">
     <meta name="description" content="All the photos I've taken when going around the world.">
@@ -72,7 +72,31 @@
                     element.setAttribute('aria-pressed', 'false');
                 });
 
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
                 for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
 
                     const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
@@ -106,17 +130,10 @@
             });
         })();
     </script>
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/./embed/animation/aos.min.css">
     <link rel="stylesheet" href="assets/css/global-styles.css">
     <link rel="stylesheet" href="assets/css/header-styles.css">
     <link rel="stylesheet" href="assets/css/typing-animation.css">
@@ -125,10 +142,9 @@
 </head>
 
 <body><div class="background-images"></div><!-- Start: Header -->
-    <header class="header-dark">
-        <!-- Start: Navigation Bar -->
+    <header class="header-dark"><!-- Start: Navigation Bar -->
         <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
-            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
@@ -145,74 +161,77 @@
                 </div>
             </div>
         </div>
-    </header><!-- End: Header -->
-    <!-- Start: Main Section -->
-    <section style="backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: linear-gradient(rgba(25, 25, 25, 0.85), rgba(25, 25, 25, 0.5) 10%);">
-        <!-- Start: Location Cards -->
-        <div class="row gx-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center" style="margin: 0px;">
+    </header><!-- End: Header --><!-- Start: Main Section -->
+    <section style="backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: linear-gradient(rgba(25, 25, 25, 0.85), rgba(25, 25, 25, 0.5) 10%);"><!-- Start: Location Cards -->
+        <div class="row gx-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center" style="margin: 0px;"><!-- Start: Kelowna -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/kelowna/IMG_5497.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/kelowna/IMG_5497.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Kelowna</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/kelowna.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Kelowna --><!-- Start: Manning Park -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/manning_park/StarStaX_IMG_5982-IMG_6227_lighten.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/manning_park/StarStaX_IMG_5982-IMG_6227_lighten.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Manning Park</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/manning_park.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Manning Park --><!-- Start: Vancouver -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="3024" height="4032" src="assets/img/photography/vancouver/IMG_5708.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="3024" height="4032" src="assets/img/photography/vancouver/IMG_5708.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Vancouver</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/vancouver.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Vancouver --><!-- Start: Hong Kong -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/hong_kong/IMG_6431.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/hong_kong/IMG_6431.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Hong Kong</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/hong_kong.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Hong Kong --><!-- Start: India -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2982" height="3976" src="assets/img/photography/india/IMG_1777.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2982" height="3976" src="assets/img/photography/india/IMG_1777.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">India</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/india.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: India --><!-- Start: Cambodia -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2000" height="1500" src="assets/img/photography/cambodia/IMG_2965.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2000" height="1500" src="assets/img/photography/cambodia/IMG_2965.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Cambodia</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/cambodia.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Cambodia --><!-- Start: Dubai & UAE -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2000" height="1500" src="assets/img/photography/dubai/IMG_4307.jpg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2000" height="1500" src="assets/img/photography/dubai/IMG_4307.jpg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Dubai &amp; UAE</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/dubai_uae.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- End: Dubai & UAE --><!-- Start: TCTC 2026 -->
             <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="4032" height="3024" src="assets/img/photography/others/IMG_9763.jpeg">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/tctc2026/IMG_6846.jpg">
+                    <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
+                        <h4 class="card-title" style="color: black;">TCTC 2026</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/tctc2026.html" style="font-weight: bold;">Visit</a>
+                    </div>
+                </div>
+            </div><!-- End: TCTC 2026 --><!-- Start: Others -->
+            <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
+                <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="4032" height="3024" src="assets/img/photography/others/IMG_9763.jpeg">
                     <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;text-align: center;">
                         <h4 class="card-title" style="color: black;">Others</h4><a class="btn btn-outline-dark border-2" role="button" href="photography/others.html" style="font-weight: bold;">Visit</a>
                     </div>
                 </div>
-            </div>
-        </div><!-- End: Location Cards -->
-        <!-- Start: Footnote -->
+            </div><!-- End: Others -->
+        </div><!-- End: Location Cards --><!-- Start: Footnote -->
         <p class="text-center" style="padding-top: 5%;margin: 0px;padding-bottom: 5%;color: white;padding-right: 10%;padding-left: 10%;">All photos taken using an <strong>iPhone XS</strong>, <strong>iPhone 16</strong>, or <strong>Canon EOS M10</strong> (15-45mm or 55-200mm lens)</p><!-- End: Footnote -->
-    </section><!-- End: Main Section -->
-    <!-- Start: Footer -->
+    </section><!-- End: Main Section --><!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-center" style="font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="/index.html">Home</a></li>
             <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
@@ -221,7 +240,7 @@
     </footer><!-- End: Footer -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/./embed/animation/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="assets/js/background_randomiser.js"></script>

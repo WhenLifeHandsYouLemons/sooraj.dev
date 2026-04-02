@@ -17,11 +17,11 @@
     <link rel="canonical" href="https://sooraj.dev/software_dev.html">
     <meta property="og:url" content="https://sooraj.dev/software_dev.html">
     <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
-    <meta name="twitter:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="sooraj.dev">
-    <meta property="og:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
     <meta name="twitter:description" content="All the software I've created in one place for easy access.">
     <meta name="description" content="All the software I've created in one place for easy access.">
     <meta name="twitter:title" content="Software Development">
@@ -72,7 +72,31 @@
                     element.setAttribute('aria-pressed', 'false');
                 });
 
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
                 for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
 
                     const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
@@ -106,17 +130,10 @@
             });
         })();
     </script>
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/./embed/animation/aos.min.css">
     <link rel="stylesheet" href="assets/css/global-styles.css">
     <link rel="stylesheet" href="assets/css/header-styles.css">
     <link rel="stylesheet" href="assets/css/typing-animation.css">
@@ -124,13 +141,10 @@
     <link rel="stylesheet" href="assets/css/footer-styles.css">
 </head>
 
-<body>
-    <!-- Start: Random Shapes --><div class="background-images"></div><!-- End: Random Shapes -->
-    <!-- Start: Header -->
-    <header class="header-dark" style="padding-bottom: 75px;">
-        <!-- Start: Navigation Bar -->
+<body><!-- Start: Random Shapes --><div class="background-images"></div><!-- End: Random Shapes --><!-- Start: Header -->
+    <header class="header-dark" style="padding-bottom: 75px;"><!-- Start: Navigation Bar -->
         <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
-            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
@@ -139,19 +153,16 @@
                     </ul>
                 </div>
             </div>
-        </nav><!-- End: Navigation Bar -->
-        <!-- Start: Page Title -->
+        </nav><!-- End: Navigation Bar --><!-- Start: Page Title -->
         <div class="container d-flex justify-content-center hero">
-            <h1 class="text-center page-title typing-anim-20" data-aos="fade" data-aos-delay="50" data-aos-once="true">Software Development</h1>
+            <h1 class="text-center page-title typing-anim-27" data-aos="fade" data-aos-delay="50" data-aos-once="true">Software &amp; Game Development</h1>
         </div><!-- End: Page Title -->
-    </header><!-- End: Header -->
-    <!-- Start: Recent Projects -->
-    <section class="justify-content-center" style="padding-top: 50px;backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: linear-gradient(rgba(25, 25, 25, 0.85), rgba(25, 25, 25, 0.5) 10%);">
-        <!-- Start: Project Cards -->
+    </header><!-- End: Header --><!-- Start: Recent Projects -->
+    <section class="justify-content-center" style="padding-top: 50px;backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: linear-gradient(rgba(25, 25, 25, 0.85), rgba(25, 25, 25, 0.5) 10%);"><!-- Start: Project Cards -->
         <section class="d-flex flex-row flex-grow-0 flex-fill justify-content-center align-items-center flex-wrap align-items-lg-center m-auto">
             <div class="row gx-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center" style="margin: 0px;">
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1575" height="877" src="assets/img/software_dev/krismas_takeover.png">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1575" height="877" src="assets/img/software_dev/krismas_takeover.png">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Krimas Takeover</h4>
                             <p class="card-text" style="color: black;">A 2D action-packed roguelike where players help Santa save his workshop from Krampus while figuring out Santa's wacky gifts.</p><a class="btn btn-outline-dark border-2" role="button" href="https://doubtrabbit.itch.io/krismas-takeover" style="font-weight: bold;" rel="external">itch.io Download</a>
@@ -159,7 +170,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/others/IMG_5376.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="5184" height="3456" src="assets/img/photography/others/IMG_5376.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Encryptext</h4>
                             <p class="card-text" style="color: black;">A small text editor that elevates your editing experience with large features.</p><a class="btn btn-outline-dark border-2" role="button" href="https://encryptext.sooraj.dev" style="font-weight: bold;">Learn More</a>
@@ -167,7 +178,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1690" height="1360" src="assets/img/software_dev/boids.png">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1690" height="1360" src="assets/img/software_dev/boids.png">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Algorithm Playgrounds</h4>
                             <p class="card-text" style="color: black;">A website to play around with different algorithms and see them in action.</p><a class="btn btn-outline-dark border-2" role="button" href="algorithm_playgrounds.html" style="font-weight: bold;">Visit</a>
@@ -175,7 +186,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2360" height="1640" src="assets/img/software_dev/fish_n_chimps.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2360" height="1640" src="assets/img/software_dev/fish_n_chimps.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Fish 'n Chimps</h4>
                             <p class="card-text" style="color: black;">An action-packed aquatic adventure where players control a monkey navigating through dangerous waters.</p><a class="btn btn-outline-dark border-2" role="button" href="https://banana-byte-entertainment.itch.io/fish-n-chimps" rel="external" style="font-weight: bold;">itch.io Download</a>
@@ -183,7 +194,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="512" height="512" src="assets/img/software_dev/fastcalc_app_icon.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="512" height="512" src="assets/img/software_dev/fastcalc_app_icon.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">FastCalc</h4>
                             <p class="card-text" style="color: black;">A small, simple, and light calculator app. Now available on the Google Play Store.</p><a class="btn btn-outline-dark border-2" role="button" href="https://play.google.com/store/apps/details?id=com.soorajdev.fast_calc" rel="external" style="font-weight: bold;">Google Play Store Download</a>
@@ -191,7 +202,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="960" height="540" src="assets/img/vfx/stylised/IMG_8552.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="960" height="540" src="assets/img/vfx/stylised/IMG_8552.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">LED Light Wall</h4>
                             <p class="card-text" style="color: black;">A passion project, made independently, and exclusively by two high school students.</p><a class="btn btn-outline-dark border-2" role="button" href="https://whenlifehandsyoulemons.github.io/LED-Light-Wall/" style="font-weight: bold;">Learn More</a>
@@ -199,7 +210,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="160" height="160" src="assets/img/software_dev/male_cook_emoji.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="160" height="160" src="assets/img/software_dev/male_cook_emoji.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Chef Chat</h4>
                             <p class="card-text" style="color: black;">An AI-powered personal chef right in your browser. Make, adjust, save, and download custom recipes.</p><a class="btn btn-outline-dark border-2" role="button" href="https://ai-personal-chef.streamlit.app/" rel="external" style="font-weight: bold;">Visit</a>
@@ -207,7 +218,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1617" height="906" src="assets/img/software_dev/mctdsisvi_game.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="1617" height="906" src="assets/img/software_dev/mctdsisvi_game.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">My City Turned Dystopian</h4>
                             <p class="card-text" style="color: black;">An action-adventure game that combines skateboarding with urban exploration and creative expression.</p><a class="btn btn-outline-dark border-2" role="button" href="https://banana-byte-entertainment.itch.io/my-city-turned-dystopian-so-i-started-vandalising-it" rel="external" style="font-weight: bold;">itch.io Download</a>
@@ -215,7 +226,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" alt="a close up of a clock with different colored numbers" width="400" height="300" src="assets/img/software_dev/stock_tracker_unsplash.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" alt="a close up of a clock with different colored numbers" width="400" height="300" src="assets/img/software_dev/stock_tracker_unsplash.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Stock Tracker</h4>
                             <p class="card-text" style="color: black;">A powerful, yet simple, app that helps track your stocks and shows you stock price history for your tracked stocks.</p><a class="btn btn-outline-dark border-2" role="button" href="https://github.com/WhenLifeHandsYouLemons/Stock-Tracker" style="font-weight: bold;" rel="external">Download</a>
@@ -223,7 +234,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-contain card-img-top w-100 d-block rounded-3 border-0" width="450" height="450" src="assets/img/software_dev/webprarie_logo.png">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-contain card-img-top w-100 d-block rounded-3 border-0" width="450" height="450" src="assets/img/software_dev/webprarie_logo.png">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">WebPrarie</h4>
                             <p class="card-text" style="color: black;">An extension designed to change PrarieLearn's progress bars to match WeBWorK more closely, and improve the UI to be more readable.</p><a class="btn btn-outline-dark border-2" role="button" href="https://github.com/WhenLifeHandsYouLemons/WebPrarie" rel="external" style="font-weight: bold;">Learn More</a>
@@ -231,7 +242,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-contain card-img-top w-100 d-block rounded-3 border-0" width="1024" height="1024" src="assets/img/software_dev/project_arch.png">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-contain card-img-top w-100 d-block rounded-3 border-0" width="1024" height="1024" src="assets/img/software_dev/project_arch.png">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">Project Arch</h4>
                             <p class="card-text" style="color: black;">This is our solution for the discontent towards the current education system. Students can freely choose what they want to learn from a wide range of project- and practical-based tutorials.</p><a class="btn btn-outline-dark border-2" role="button" href="https://whenlifehandsyoulemons.github.io/Project-Arch/" style="font-weight: bold;">Visit</a>
@@ -239,7 +250,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2104" height="984" src="assets/img/software_dev/sprig_pcb_wiring_diagram.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="2104" height="984" src="assets/img/software_dev/sprig_pcb_wiring_diagram.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">sprig-essentials</h4>
                             <p class="card-text" style="color: black;">A useful PyPI package to simplify the process of creating games and apps with Sprig.</p><a class="btn btn-outline-dark border-2" role="button" href="https://github.com/WhenLifeHandsYouLemons/sprig-essentials" rel="external" style="font-weight: bold;">Learn More</a>
@@ -247,7 +258,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="488" height="465" src="assets/img/software_dev/chronocube_logo.png">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" width="488" height="465" src="assets/img/software_dev/chronocube_logo.png">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">ChronoCube</h4>
                             <p class="card-text" style="color: black;">A Rubik's Cube timer that gives you all the information you'll ever need. Right at your fingertips.</p><a class="btn btn-outline-dark border-2" role="button" href="https://chronocube.sooraj.dev" style="font-weight: bold;">Learn More</a>
@@ -255,7 +266,7 @@
                     </div>
                 </div>
                 <div class="col rounded-5 border-0 align-self-stretch" style="padding: 25px;">
-                    <div class="card h-100 rounded-5 border-0" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" alt="a blackboard with a bunch of diagrams on it" width="400" height="267" src="assets/img/software_dev/extramaths.jpg">
+                    <div class="card rounded-5 border-0 h-100" style="padding: 25px;background: rgba(255, 255, 255, 0.4);"><img class="img-fluid aspect-ratio-4x3 object-fit-cover card-img-top w-100 d-block rounded-3 border-0" alt="a blackboard with a bunch of diagrams on it" width="400" height="267" src="assets/img/software_dev/extramaths.jpg">
                         <div class="card-body p-4" style="padding: 0px !important;padding-top: 20px !important;">
                             <h4 class="card-title" style="color: black;">extramaths</h4>
                             <p class="card-text" style="color: black;">A PyPI package that simplifies the calculations for complex equations and formulas.</p><a class="btn btn-outline-dark border-2" role="button" href="https://github.com/WhenLifeHandsYouLemons/extramaths" rel="external" style="font-weight: bold;">Learn More</a>
@@ -264,10 +275,9 @@
                 </div>
             </div>
         </section><!-- End: Project Cards -->
-    </section><!-- End: Recent Projects -->
-    <!-- Start: Footer -->
+    </section><!-- End: Recent Projects --><!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-center" style="font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="/index.html">Home</a></li>
             <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
@@ -276,7 +286,7 @@
     </footer><!-- End: Footer -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/./embed/animation/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="assets/js/background_randomiser.js"></script>

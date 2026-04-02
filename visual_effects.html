@@ -17,11 +17,11 @@
     <link rel="canonical" href="https://sooraj.dev/visual_effects.html">
     <meta property="og:url" content="https://sooraj.dev/visual_effects.html">
     <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
-    <meta name="twitter:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="sooraj.dev">
-    <meta property="og:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
     <meta name="twitter:description" content="All of my 3D renders and a link to all the video renders on my YouTube channel.">
     <meta name="twitter:title" content="Visual Effects">
     <meta name="description" content="All of my 3D renders and a link to all the video renders on my YouTube channel.">
@@ -72,7 +72,31 @@
                     element.setAttribute('aria-pressed', 'false');
                 });
 
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
                 for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
 
                     const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
@@ -106,17 +130,10 @@
             });
         })();
     </script>
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/./embed/animation/aos.min.css">
     <link rel="stylesheet" href="assets/css/global-styles.css">
     <link rel="stylesheet" href="assets/css/header-styles.css">
     <link rel="stylesheet" href="assets/css/typing-animation.css">
@@ -127,10 +144,9 @@
 </head>
 
 <body><div class="background-images"></div><!-- Start: Header -->
-    <header class="header-dark" style="background: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(25, 25, 25, 0.85) 100%), rgba(0, 0, 0, 0);padding-bottom: 50px;backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <!-- Start: Navigation Bar -->
+    <header class="header-dark" style="background: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(25, 25, 25, 0.85) 100%), rgba(0, 0, 0, 0);padding-bottom: 50px;backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);"><!-- Start: Navigation Bar -->
         <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
-            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
@@ -139,40 +155,35 @@
                     </ul>
                 </div>
             </div>
-        </nav><!-- End: Navigation Bar -->
-        <!-- Start: Page Title -->
+        </nav><!-- End: Navigation Bar --><!-- Start: Page Title -->
         <div class="container d-flex justify-content-center hero">
             <h1 class="text-center page-title typing-anim-14" data-aos="fade" data-aos-delay="50" data-aos-once="true">Visual Effects</h1>
         </div><!-- End: Page Title -->
-    </header><!-- End: Header -->
-    <!-- Start: Realistic Renders -->
+    </header><!-- End: Header --><!-- Start: Realistic Renders -->
     <section style="backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: rgba(255, 255, 255, 0.5);">
         <h2 data-aos="fade" data-aos-delay="1000" data-aos-once="true" class="page-heading" style="color: rgb(0, 0, 0);text-align: center;font-weight: bold;padding-top: 140px;padding-bottom: 40px;margin: 0px;">Realistic Renders</h2><!-- Start: Realistic Responsive Image Grid -->
         <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;">
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400310.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_0294.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493419.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493420.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493422.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6230.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6783.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6980.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7310.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7311.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6785.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_8665.jpg"></div>
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400311.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493416.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202406021702230.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_0295.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493421.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493423.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6979.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7373.jpg"></div>
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="img-fluid" width="1920" height="1080" src="assets/img/vfx/realistic/hd_res_v2.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400310.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_0294.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493419.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493420.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493422.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6230.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6783.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6980.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7310.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7311.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6785.jpg"></div>
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400311.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493416.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202406021702230.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_0295.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493421.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493423.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6979.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7373.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_8665.jpg"></div>
             <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400312.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493417.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493418.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400314.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_202405311400313.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493426.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493425.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_2023120716493424.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7214.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_5991.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_6974.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7183.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7367.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7727.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/realistic/IMG_7729.jpg"></div>
         </div><!-- End: Realistic Responsive Image Grid -->
-    </section><!-- End: Realistic Renders -->
-    <!-- Start: Stylised Renders -->
+    </section><!-- End: Realistic Renders --><!-- Start: Stylised Renders -->
     <section style="backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: rgba(255, 255, 255, 0.5);">
         <h2 data-aos="fade" data-aos-once="true" class="page-heading" style="color: rgb(0, 0, 0);padding-top: 140px;font-weight: bold;text-align: center;padding-bottom: 40px;margin: 0px;">Stylised Renders</h2><!-- Start: Stylised Responsive Image Grid -->
         <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;">
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311592.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311590.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_8552.jpg"></div>
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311591.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202312071651401.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202312071651402.jpg"></div>
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311593.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_7315.jpg"></div>
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="img-fluid" width="3840" height="2160" src="assets/img/vfx/stylised/hello_world_2.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311592.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311590.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_8552.jpg"></div>
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="img-fluid" width="1920" height="1080" src="assets/img/vfx/stylised/still_v1.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311591.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202312071651401.jpg"></div>
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202405302311593.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_7315.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="assets/img/vfx/stylised/IMG_202312071651402.jpg"></div>
         </div><!-- End: Stylised Responsive Image Grid -->
-    </section><!-- End: Stylised Renders -->
-    <!-- Start: Video Renders -->
+    </section><!-- End: Stylised Renders --><!-- Start: Video Renders -->
     <section style="backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);background: rgba(255, 255, 255, 0.5);">
         <h2 data-aos="fade" data-aos-once="true" class="page-heading" style="color: rgb(0, 0, 0);padding-top: 140px;font-weight: bold;text-align: center;padding-bottom: 40px;margin: 0px;">Video Renders</h2>
         <p class="lead" data-aos="fade" data-aos-once="true" style="padding: 25px;color: rgb(10, 10, 10);padding-bottom: 16px;margin: 0px;">To see all of my video renders, visit my&nbsp;<a href="https://www.youtube.com/@ParticlePlayground"><span style="color: rgb(10, 41, 202);">YouTube channel</span></a>!</p><!-- Start: Responsive Youtube Embed -->
         <div data-aos="fade" data-aos-once="true" class="video-container" style="padding-right: 50px;padding-left: 50px;margin: 0px;"><iframe width="420" height="315" src="https://www.youtube.com/embed?listType=playlist&list=UUo1jGxzfB2gUjjRE2m3kc9A&mute=1&controls=1&loop=1" allowfullscreen>
 </iframe></div><!-- End: Responsive Youtube Embed -->
-    </section><!-- End: Video Renders -->
-    <!-- Start: Footer -->
+    </section><!-- End: Video Renders --><!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-center" style="font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="/index.html">Home</a></li>
             <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
@@ -181,7 +192,7 @@
     </footer><!-- End: Footer -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/./embed/animation/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="assets/js/background_randomiser.js"></script>

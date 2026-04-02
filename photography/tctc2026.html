@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6TVV7PE2C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-K6TVV7PE2C');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TCTC 2026 Photos | sooraj.dev</title>
+    <link rel="canonical" href="https://sooraj.dev/photography/tctc2026.html">
+    <meta property="og:url" content="https://sooraj.dev/photography/tctc2026.html">
+    <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
+    <meta name="twitter:description" content="My personal website, portfolio, place to contact, and everything in between.">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sooraj.dev">
+    <meta property="og:title" content="sooraj.dev">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
+    <meta name="description" content="Official photos I took for the Terminal City Tabletop Convention 2026.">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/JetBrains%20Mono.css">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="../assets/css/./embed/animation/aos.min.css">
+    <link rel="stylesheet" href="../assets/css/global-styles.css">
+    <link rel="stylesheet" href="../assets/css/header-styles.css">
+    <link rel="stylesheet" href="../assets/css/typing-animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha512-NVt7pmp5f+3eWRPO1h4A1gCf4opn4r5z2wS1mi7AaVcTzE9wDJ6RzMqSygjDzYHLp+mAJ2/qzXXDHar6IQwddQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/image-grid.css">
+    <link rel="stylesheet" href="../assets/css/footer-styles.css">
+</head>
+
+<body><div class="background-images"></div><!-- Start: Header -->
+    <header class="header-dark"><!-- Start: Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-2">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav><!-- End: Navigation Bar -->
+        <div class="container hero">
+            <div class="row text-center">
+                <div class="col-md-8 offset-md-2 text-center typing-anim-container">
+                    <h1 class="text-break text-center page-title" data-aos="fade" data-aos-delay="200" data-aos-once="true">Terminal City Tabletop Convention 2026</h1>
+                </div>
+            </div>
+        </div>
+    </header><!-- End: Header --><!-- Start: Photo Gallery -->
+    <section class="photo-gallery" style="background: rgb(255, 255, 255, 0.5);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);"><!-- Start: Responsive Image Grid -->
+        <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;"><!-- Start: Column 1 -->
+            <div class="rig-column" style="min-width: 33.33%;max-width: 100%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6821.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6817.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6824.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6827.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6830.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6833.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6836.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6839.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6842.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6845.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6848.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6851.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6854.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6857.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6859.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6863.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6866.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6869.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6871.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6877.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6878.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6879.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6880.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6881.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6884.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6885.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6899.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6909.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6910.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6911.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6912.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6913.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6914.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6921.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6922.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6923.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6924.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6925.jpg"></div><!-- End: Column 1 --><!-- Start: Column 2 -->
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6818.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6822.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6825.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6828.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6831.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6834.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6837.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6840.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6843.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6846.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6849.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6852.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6855.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6860.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6862.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6864.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6867.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6870.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6872.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6874.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6876.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6893.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6894.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6895.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6896.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6897.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6900.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6901.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6902.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6904.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6905.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6906.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6907.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6926.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6927.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6928.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6932.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6933.jpg"></div><!-- End: Column 2 --><!-- Start: Column 3 -->
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6819.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6823.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6826.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6829.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6832.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6835.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6838.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6841.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6844.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6847.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6850.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6853.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6856.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6858.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6861.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6865.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6868.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6873.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/tctc2026/IMG_6875.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6887.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6888.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6889.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6890.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6891.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6892.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6886.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6916.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6917.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6918.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6919.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6920.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6915.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6908.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6929.jpg"><img class="img-fluid" width="5184" height="3456" src="../assets/img/photography/tctc2026/IMG_6930.jpg"><img class="img-fluid" width="3456" height="5184" src="../assets/img/photography/tctc2026/IMG_6931.jpg"></div><!-- End: Column 3 -->
+        </div><!-- End: Responsive Image Grid -->
+    </section><!-- End: Photo Gallery --><!-- Start: Footer -->
+    <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="/index.html">Home</a></li>
+            <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
+            <li class="list-inline-item"><a href="/contact.html">Contact</a></li>
+        </ul><!-- End: Links -->
+    </footer><!-- End: Footer -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/./embed/animation/aos.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
+    <script src="../assets/js/background_randomiser.js"></script>
+    <script src="../assets/js/vendor/typed.js/typed.min.js"></script>
+</body>
+
+</html>

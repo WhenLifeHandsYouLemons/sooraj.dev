@@ -17,11 +17,11 @@
     <link rel="canonical" href="https://sooraj.dev/projects.html">
     <meta property="og:url" content="https://sooraj.dev/projects.html">
     <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
-    <meta name="twitter:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="sooraj.dev">
-    <meta property="og:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
     <meta name="twitter:description" content="All of my projects such as photography, visual effects, software development, and art.">
     <meta name="description" content="All of my projects such as photography, visual effects, software development, and art.">
     <meta name="twitter:title" content="Projects">
@@ -72,7 +72,31 @@
                     element.setAttribute('aria-pressed', 'false');
                 });
 
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
                 for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
 
                     const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
@@ -106,17 +130,10 @@
             });
         })();
     </script>
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/JetBrains%20Mono.css">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/./embed/animation/aos.min.css">
     <link rel="stylesheet" href="assets/css/global-styles.css">
     <link rel="stylesheet" href="assets/css/header-styles.css">
     <link rel="stylesheet" href="assets/css/typing-animation.css">
@@ -124,12 +141,10 @@
     <link rel="stylesheet" href="assets/css/footer-styles.css">
 </head>
 
-<body>
-    <!-- Start: Header -->
-    <header class="header-dark" style="background: linear-gradient(rgba(0, 0, 0, 1) 19%, rgba(25, 25, 25, 0.85)), rgba(0, 0, 0, 0);">
-        <!-- Start: Navigation Bar -->
+<body><!-- Start: Header -->
+    <header class="header-dark" style="background: linear-gradient(rgba(0, 0, 0, 1) 19%, rgba(25, 25, 25, 0.85)), rgba(0, 0, 0, 0);"><!-- Start: Navigation Bar -->
         <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
-            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
@@ -138,8 +153,7 @@
                     </ul>
                 </div>
             </div>
-        </nav><!-- End: Navigation Bar -->
-        <!-- Start: Page Title -->
+        </nav><!-- End: Navigation Bar --><!-- Start: Page Title -->
         <div class="container hero">
             <div class="row text-center">
                 <div class="col-md-8 offset-md-2 text-center typing-anim-container">
@@ -148,29 +162,25 @@
             </div>
         </div><!-- End: Page Title -->
     </header><!-- End: Header -->
-    <div class="row g-0 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2" style="min-height: 100vh;">
-        <!-- Start: Coding Section -->
+    <div class="row g-0 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2" style="min-height: 100vh;"><!-- Start: Coding Section -->
         <div class="col d-flex justify-content-center align-items-center" style="background: linear-gradient(90deg, rgba(245, 190, 10, 0.8) 15%, rgba(25, 135, 84, 0.8) 100%), url(&quot;assets/img/photography/others/IMG_5376.jpg&quot;) center / cover no-repeat;padding: 50px;">
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <h2 class="text-center" data-aos="fade" data-aos-once="true" style="font-size: 40px;color: rgb(0, 0, 0);">Software Development</h2>
+                <h2 class="text-center" data-aos="fade" data-aos-once="true" style="font-size: 40px;color: rgb(0, 0, 0);">Software &amp; Game Development</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 25px;">The chance to kick back, relax, and have some fun.</p><a class="btn btn-outline-dark btn-sm text-uppercase fw-bold rounded-2 border-2" role="button" data-aos="fade" data-aos-once="true" href="software_dev.html" style="padding: 12px 18px;border-width: 2px;border-color: rgb(0, 0, 0);">Explore</a>
             </div>
-        </div><!-- End: Coding Section -->
-        <!-- Start: VFX Section -->
+        </div><!-- End: Coding Section --><!-- Start: VFX Section -->
         <div class="col d-flex justify-content-center align-items-center" style="background: linear-gradient(90deg, rgba(25, 135, 84, 0.8) 25%, rgba(0,103,255,0.8)), url(&quot;assets/img/vfx/realistic/IMG_202405311400310.jpg&quot;) bottom / cover no-repeat;padding: 50px;">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 40px;">Visual Effects</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 25px;">The creativity that flows from advanced 3D software.</p><a class="btn btn-outline-dark btn-sm text-uppercase fw-bold rounded-2 border-2" role="button" data-aos="fade" data-aos-once="true" href="visual_effects.html" style="padding: 12px 18px;border-width: 2px;border-color: rgb(0, 0, 0);">Explore</a>
             </div>
-        </div><!-- End: VFX Section -->
-        <!-- Start: Photography Section -->
+        </div><!-- End: VFX Section --><!-- Start: Photography Section -->
         <div class="col d-flex justify-content-center align-items-center" style="background: linear-gradient(90deg, rgba(13, 110, 253, 0.8) 0%, rgba(220, 53, 69, 0.8) 95%), url(&quot;assets/img/photography/hong_kong/IMG_1824.jpg&quot;) center / cover no-repeat;padding: 50px;">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 40px;">Photography</h2>
                 <p class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 25px;">Capturing the world around us through different lenses.</p><a class="btn btn-outline-dark btn-sm text-uppercase fw-bold rounded-2 border-2" role="button" data-aos="fade" data-aos-once="true" href="photography.html" style="padding: 12px 18px;">Explore</a>
             </div>
-        </div><!-- End: Photography Section -->
-        <!-- Start: Art Section -->
+        </div><!-- End: Photography Section --><!-- Start: Art Section -->
         <div class="col d-flex justify-content-center align-items-center" style="background: linear-gradient(90deg, rgb(220, 53, 69, 0.8) 0%, rgb(255, 193, 7, 0.8) 100%), url(&quot;assets/img/art/Lighthouse.jpg&quot;) top / cover no-repeat;padding: 50px;">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <h2 class="text-center" data-aos="fade" data-aos-once="true" style="color: rgb(0, 0, 0);font-size: 40px;">Art</h2>
@@ -179,7 +189,7 @@
         </div><!-- End: Art Section -->
     </div><!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-center" style="font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="/index.html">Home</a></li>
             <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
@@ -188,7 +198,7 @@
     </footer><!-- End: Footer -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/./embed/animation/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="assets/js/vendor/typed.js/typed.min.js"></script>

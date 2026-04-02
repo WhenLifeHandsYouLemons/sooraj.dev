@@ -18,12 +18,12 @@
     <meta property="og:url" content="https://sooraj.dev/photography/manning_park.html">
     <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
     <meta name="twitter:description" content="My personal website, portfolio, place to contact, and everything in between.">
-    <meta name="twitter:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="sooraj.dev">
     <meta property="og:title" content="sooraj.dev">
-    <meta property="og:image" content="https://sooraj.dev/assets/img/others/profile_photo_blank_bg.jpg">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
     <meta name="description" content="Photos I've taken in Manning Park, BC.">
     <script>
         (function() {
@@ -72,7 +72,31 @@
                     element.setAttribute('aria-pressed', 'false');
                 });
 
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
                 for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
 
                     const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
 
@@ -106,17 +130,10 @@
             });
         })();
     </script>
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg">
-    <link rel="icon" type="image/jpeg" sizes="3024x3024" href="../assets/img/others/profile_photo_blank_bg.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/JetBrains%20Mono.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="../assets/css/aos.min.css">
+    <link rel="stylesheet" href="../assets/css/./embed/animation/aos.min.css">
     <link rel="stylesheet" href="../assets/css/global-styles.css">
     <link rel="stylesheet" href="../assets/css/header-styles.css">
     <link rel="stylesheet" href="../assets/css/typing-animation.css">
@@ -126,10 +143,9 @@
 </head>
 
 <body><div class="background-images"></div><!-- Start: Header -->
-    <header class="header-dark">
-        <!-- Start: Navigation Bar -->
+    <header class="header-dark"><!-- Start: Navigation Bar -->
         <nav class="navbar navbar-expand-lg navigation-clean navbar-light">
-            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" data-aos="fade" data-aos-once="true" href="/index.html">sooraj.dev</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" data-aos="fade" data-aos-once="true" href="/index.html">Home</a></li>
@@ -146,22 +162,16 @@
                 </div>
             </div>
         </div>
-    </header><!-- End: Header -->
-    <!-- Start: Photo Gallery -->
-    <section class="photo-gallery" style="background: rgb(255, 255, 255, 0.5);color: rgb(49, 52, 55);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <!-- Start: Responsive Image Grid -->
-        <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;">
-            <!-- Start: Column 1 -->
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/IMG_2025123017170732.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/StarStaX_IMG_5982-IMG_6227_lighten.jpg"></div><!-- End: Column 1 -->
-            <!-- Start: Column 2 -->
-            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/IMG_7400.jpeg"></div><!-- End: Column 2 -->
-            <!-- Start: Column 3 -->
+    </header><!-- End: Header --><!-- Start: Photo Gallery -->
+    <section class="photo-gallery" style="background: rgb(255, 255, 255, 0.5);color: rgb(49, 52, 55);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);"><!-- Start: Responsive Image Grid -->
+        <div class="d-flex flex-row flex-wrap rig-row" style="padding: 20px;"><!-- Start: Column 1 -->
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/IMG_2025123017170732.jpg"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/StarStaX_IMG_5982-IMG_6227_lighten.jpg"></div><!-- End: Column 1 --><!-- Start: Column 2 -->
+            <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/IMG_7400.jpeg"></div><!-- End: Column 2 --><!-- Start: Column 3 -->
             <div class="rig-column" style="max-width: 100%;min-width: 33.33%;"><img class="rounded" data-aos="fade" data-aos-once="true" src="../assets/img/photography/manning_park/StarStaX_IMG_5817-IMG_5916_lighten.jpg"></div><!-- End: Column 3 -->
         </div><!-- End: Responsive Image Grid -->
-    </section><!-- End: Photo Gallery -->
-    <!-- Start: Footer -->
+    </section><!-- End: Photo Gallery --><!-- Start: Footer -->
     <footer class="footer-basic" style="background: rgba(255, 255, 255, 0.75);backdrop-filter: blur(50px);-webkit-backdrop-filter: blur(50px);">
-        <h1 class="text-center" style="font-weight: bold;text-shadow: 0px 0px 13px rgb(0, 0, 0);">sooraj.dev</h1><!-- Start: Links -->
+        <h1 class="text-center" id="footer">sooraj.dev</h1><!-- Start: Links -->
         <ul class="list-inline">
             <li class="list-inline-item"><a href="/index.html">Home</a></li>
             <li class="list-inline-item"><a href="/projects.html">Projects</a></li>
@@ -170,7 +180,7 @@
     </footer><!-- End: Footer -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/aos.min.js"></script>
+    <script src="../assets/js/./embed/animation/aos.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha512-7KzSt4AJ9bLchXCRllnyYUDjfhO2IFEWSa+a5/3kPGQbr+swRTorHQfyADAhSlVHCs1bpFdB1447ZRzFyiiXsg==" crossorigin="anonymous"></script>
     <script src="../assets/js/background_randomiser.js"></script>

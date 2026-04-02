@@ -34,4 +34,13 @@ $(function() {
             $(this).attr("src", "assets/img/art/Book_Loading_Anim.gif");
         }
     );
+    
+    $("#spaced_out").hover(
+        function() {
+            $(this).attr("src", "assets/img/art/bts/Spaced_Out_Still.png");
+        },
+        function() {
+            $(this).attr("src", "assets/img/art/Spaced_Out_Anim.gif");
+        }
+    );
 });
