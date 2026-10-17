@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- Analytics are not tracked on this page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Particle Playground Refund Policy</title>
+    <link rel="canonical" href="https://sooraj.dev/refund_policies/particle_playground_refund_policy.html">
+    <meta property="og:url" content="https://sooraj.dev/refund_policies/particle_playground_refund_policy.html">
+    <meta property="og:description" content="My personal website, portfolio, place to contact, and everything in between.">
+    <meta name="twitter:description" content="My personal website, portfolio, place to contact, and everything in between.">
+    <meta name="twitter:image" content="others/profile_photo_blank_bg.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sooraj.dev">
+    <meta property="og:title" content="sooraj.dev">
+    <meta property="og:image" content="others/profile_photo_blank_bg.jpg">
+    <meta name="description" content="Refund Policy for Particle Playground.">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                const iconTheme = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const adaptIcon = !!themeSwitcher.dataset.bsAdaptIcon;
+
+                    if (adaptIcon) {
+                        const btnIcon = themeSwitcher.querySelector('[data-bss-adaptable]');
+
+                        try {
+                            const themeIcons = JSON.parse(themeSwitcher.dataset.bssIcons || "{}");
+                            const newIconMarkup = themeIcons[iconTheme];
+
+                            const template = document.createElement("template");
+                            template.innerHTML = newIconMarkup;
+
+                            const newIconFragment = template.content.cloneNode(true);
+
+                            if (newIconFragment?.children?.length) {
+                                newIconFragment.children[0].dataset.bssAdaptable = true;
+                            }
+
+                            btnIcon.replaceWith(newIconFragment);
+                        } catch (e) {}
+                    }
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/JetBrains%20Mono.css">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+</head>
+
+<body><div class=Refund-policy>
+    <h1>Refund Policy</h1>
+    <p>Last updated: October 17, 2026</p>
+
+    <h2>Interpretation and Definitions</h2>
+    <h3>Interpretation</h3>
+    <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+    <h3>Definitions</h3>
+    <p>For the purposes of this Refund Policy:</p>
+    <ul>
+    <li>
+    <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Particle Playground.</p>
+    </li>
+    <li>
+    <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+    </li>
+    </ul>
+    <h2>Policy</h2>
+    <p>We allow refunds up to 1 week after purchase. Please contact the Company by email at refund@sooraj.dev with your contact information, the product/service You are trying to refund, proof of purchase, and the reason for the refund. We will try our best to refund You the amount you paid for the product/service.</p>
+    <p>Exceptions may apply. This is not a guarantee for a refund, there may be exceptional circumstances in which a refund will not be given to You.</p>
+    <h2>Changes to this Refund Policy</h2>
+    <p>We may update Our Refund Policy from time to time. We will notify You of any changes by posting the new Refund Policy on this page.</p>
+    <p>We will let You know via a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Refund Policy.</p>
+    <p>You are advised to review this Refund Policy periodically for any changes. Changes to this Refund Policy are effective when they are posted on this page.</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Refund Policy, You can contact us:</p>
+    <ul>
+    <li>By email: developer@sooraj.dev</li>
+    </ul>
+</div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/vendor/typed.js/typed.min.js"></script>
+</body>
+
+</html>
